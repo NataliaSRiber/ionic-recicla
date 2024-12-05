@@ -1,0 +1,7 @@
+{
+  "name": "padaria-doces-sonhos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

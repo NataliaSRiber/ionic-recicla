@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Recicla</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list color="success" class="p-0 shadow-sm">
+    <ion-item color="success">
+      <ion-avatar slot="start">
+        <img src="../../../assets//woman.jpg" alt="User photo">
+      </ion-avatar>
+      <ion-label>
+        <h1>Paulo Alves</h1>
+        <p>Gathered: <span class="font-bold">$15,00</span></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-card>
+    <app-pickup-call-card [data]="pickup"></app-pickup-call-card>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success">
+      <ion-icon name="add" class="text-white"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

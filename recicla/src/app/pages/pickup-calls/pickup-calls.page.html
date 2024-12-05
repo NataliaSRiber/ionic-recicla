@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>My pickup calls</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @for (card of pickup; track $index) {
+    <app-pickup-call-card [hasHeader]="false" [hasDescription]="false" [data]=card></app-pickup-call-card>
+  }
+ </ion-content>
