@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonList, IonItem, IonAvatar, IonLabel, IonIcon, IonFab, IonFabButton, IonCard, IonCardHeader, IonCardSubtitle, IonButton, IonCardContent } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonList, IonItem, IonAvatar, IonLabel, IonIcon, IonFab, IonFabButton, IonCard } from '@ionic/angular/standalone';
 import { hourglassOutline, add } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { PickupCallCardComponent } from "../../components/pickup-call-card/pickup-call-card.component";
@@ -12,7 +12,7 @@ import { CardInformationDTO } from 'src/dto/card.dto';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonCardContent, IonButton, IonCardSubtitle, IonCardHeader, IonCard, IonFabButton, IonFab, IonIcon, IonLabel, IonAvatar, IonItem, IonList, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonMenuButton, PickupCallCardComponent]
+  imports: [IonCard, IonFabButton, IonFab, IonIcon, IonLabel, IonAvatar, IonItem, IonList, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonMenuButton, PickupCallCardComponent]
 })
 export class HomePage implements OnInit {
   pickup: CardInformationDTO =
