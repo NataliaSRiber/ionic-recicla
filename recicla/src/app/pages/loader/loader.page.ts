@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonSpinner } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loader',
@@ -12,9 +13,12 @@ import { IonContent, IonSpinner } from '@ionic/angular/standalone';
 })
 export class LoaderPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-  }
+    setTimeout(() => {
+      this.router.navigate(['login']);
+    }, 1000)
+  };
 
 }
