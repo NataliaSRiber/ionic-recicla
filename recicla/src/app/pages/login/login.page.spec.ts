@@ -19,4 +19,11 @@ describe('LoginPage', () => {
     component.login(); // função de login
     expect(router.navigate).toHaveBeenCalledWith(['home']);
   });
+
+  it('should go to register page when click on register button', () => {
+    spyOn(router, 'navigate');
+    component.register(); // função de login
+    expect(router.navigate).toHaveBeenCalledWith(['register']);
+  })
+
 });
