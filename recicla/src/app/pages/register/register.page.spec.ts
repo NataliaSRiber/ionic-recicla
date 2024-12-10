@@ -14,7 +14,9 @@ describe('RegisterPage', () => {
     router = TestBed.get(Router);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('it should go to home page when click on Register button', () => {
+    spyOn(router, 'navigate');
+    component.home(); // função que vai para a home
+    expect(router.navigate).toHaveBeenCalledWith(['home']);
   });
 });
