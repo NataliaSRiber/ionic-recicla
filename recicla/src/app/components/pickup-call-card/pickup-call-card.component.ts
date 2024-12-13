@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonItem, IonLabel, IonCard, IonCardHeader, IonCardSubtitle, IonCardContent, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { CardInformationDTO } from 'src/dto/card.dto';
@@ -16,6 +16,11 @@ export class PickupCallCardComponent  implements OnInit {
   @Input() hasHeader : boolean = true;
   @Input() hasDescription: boolean = true;
   @Input() data: CardInformationDTO | undefined;
+  @Output() buttonClick = new EventEmitter<void>();
+
+  onButtonClick() {
+    this.buttonClick.emit();
+  }
 
   constructor() { }
 
