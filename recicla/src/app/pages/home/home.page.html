@@ -21,10 +21,10 @@
   </ion-list>
 
   <ion-card>
-    <app-pickup-call-card [data]="pickup"></app-pickup-call-card>
+    <app-pickup-call-card [data]="pickup" (buttonClick)="goToPickupCalls()"></app-pickup-call-card>
   </ion-card>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="success">
+    <ion-fab-button color="success" (click)="goToCreateNewPickUpCall()">
       <ion-icon name="add" class="text-white"></ion-icon>
     </ion-fab-button>
   </ion-fab>

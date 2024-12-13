@@ -6,6 +6,7 @@ import { hourglassOutline, add } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { PickupCallCardComponent } from "../../components/pickup-call-card/pickup-call-card.component";
 import { CardInformationDTO } from 'src/dto/card.dto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -26,11 +27,19 @@ export class HomePage implements OnInit {
       finished: false,
     };
 
-  constructor() { 
+  constructor(private router: Router) { 
     addIcons({hourglassOutline,add});
-  }
+  };
 
   ngOnInit() {
-  }
+  };
+
+  goToPickupCalls() {
+    this.router.navigate(['pickup-calls'])
+  };
+
+  goToCreateNewPickUpCall() {
+    this.router.navigate(['pickup-call'])
+  };
 
 }
