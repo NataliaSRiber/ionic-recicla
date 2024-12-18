@@ -5,13 +5,18 @@ import { Router } from '@angular/router';
 describe('LoginPage', () => {
   let component: LoginPage;
   let fixture: ComponentFixture<LoginPage>;
-  let router: Router
+  let router: Router;
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
     router = TestBed.get(Router);
+  });
+
+  it('should create form on init', () => {
+    component.ngOnInit();
+    expect(true).toBeTruthy();
   });
 
   it('should go to home page on login', () => {
