@@ -1,22 +1,33 @@
 <ion-content>
   <div class="flex flex-col h-screen items-center justify-center">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title class="text-bold text-2xl text-center mb-4">Recicla</ion-card-title>
-      </ion-card-header>
-      <ion-card-content class="text-center w-full flex flex-col">
-        <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-        <ion-button fill="clear" class="text-white/80 text-xs text-white normal-case w-full">Forgot email/password</ion-button>
-        <ion-button color="success" (click)="login()">Login</ion-button>
-        <ion-button fill="clear" (click)="register()">Register</ion-button>
-      </ion-card-content>
-    </ion-card>
+    <form [formGroup]="form">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="text-bold text-2xl text-center mb-4">Recicla</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="text-center w-full flex flex-col">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          @if (form.get('email')?.touched && form.get('email')?.errors?.['required']) {
+            <ion-label color="danger">Email is mandatory</ion-label>
+          }
+          @if (form.get('email')?.touched && form.get('email')?.errors?.['email']) {
+            <ion-label color="danger">Email is invalid</ion-label>
+          }
+          @if (form.get('email')?.touched && form.get('password')?.errors?.['required']) {
+            <ion-label color="danger">Email is mandatory</ion-label>
+          }
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-button fill="clear" class="text-white/80 text-xs text-white normal-case w-full" [disabled]="form.get('email')?.invalid">Forgot email/password</ion-button>
+          <ion-button color="success" (click)="login()" [disabled]="form.invalid">Login</ion-button>
+          <ion-button fill="clear" (click)="register()">Register</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form>
   </div>
 </ion-content>
